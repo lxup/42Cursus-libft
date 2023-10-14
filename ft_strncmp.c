@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lquehec <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/14 12:03:44 by lquehec           #+#    #+#             */
-/*   Updated: 2023/10/14 12:03:44 by lquehec          ###   ########.fr       */
+/*   Created: 2023/10/14 16:36:29 by lquehec           #+#    #+#             */
+/*   Updated: 2023/10/14 16:36:29 by lquehec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+int	ft_strncmp(const char *s1, const char *s2, size_t len)
 {
 	size_t	i;
 
 	i = 0;
-	if (size > 0)
-	{
-		while (src[i] && i < (size - 1))
-		{
-			dest[i] = src[i];
-			i++;
-		}
-		dest[i] = 0;
-	}
-	while (src[i])
+	while (i < (len - 1) && s1[i] == s2[i] && s1[i] && s2[i])
 		i++;
-	return (i);
+	return (s1[i] - s2[i]);
 }
+
+// int	main(void)
+// {
+// 	#include <stdio.h>
+// 	#include <string.h>
+
+// 	printf("Original: %d\n", strncmp("Bonjour", "Boijour", 100));
+// 	printf("Result: %d\n", ft_strncmp("Bonjour", "Boijour", 100));
+// 	return (0);
+// }

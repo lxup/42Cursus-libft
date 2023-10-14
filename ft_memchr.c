@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lquehec <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/14 12:03:44 by lquehec           #+#    #+#             */
-/*   Updated: 2023/10/14 12:03:44 by lquehec          ###   ########.fr       */
+/*   Created: 2023/10/14 16:46:52 by lquehec           #+#    #+#             */
+/*   Updated: 2023/10/14 16:46:52 by lquehec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+void	*ft_memchr(const void *s, int c, size_t size)
 {
 	size_t	i;
 
 	i = 0;
-	if (size > 0)
+	while (i < size)
 	{
-		while (src[i] && i < (size - 1))
-		{
-			dest[i] = src[i];
-			i++;
-		}
-		dest[i] = 0;
-	}
-	while (src[i])
+		if (*(unsigned char *)(s + i) == (unsigned char)c)
+			return ((void *)(s + i));
 		i++;
-	return (i);
+	}
+	return (NULL);
 }
+
+// int	main(void)
+// {
+// 	#include <stdio.h>
+// 	#include <string.h>
+
+// 	printf("Original: %p\n", memchr("Bonjour", 'n', 5));
+// 	printf("Result: %p\n", ft_memchr("Bonjour", 'n', 5));
+// 	return (0);
+// }

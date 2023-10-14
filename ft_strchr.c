@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lquehec <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/14 12:03:44 by lquehec           #+#    #+#             */
-/*   Updated: 2023/10/14 12:03:44 by lquehec          ###   ########.fr       */
+/*   Created: 2023/10/14 16:17:36 by lquehec           #+#    #+#             */
+/*   Updated: 2023/10/14 16:17:36 by lquehec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+char	*ft_strchr(const char *string, int searchedChar)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
-	if (size > 0)
+	while (string[i])
 	{
-		while (src[i] && i < (size - 1))
-		{
-			dest[i] = src[i];
-			i++;
-		}
-		dest[i] = 0;
-	}
-	while (src[i])
+		if (string[i] == (char)searchedChar)
+			return ((char *)(string + i));
 		i++;
-	return (i);
+	}
+	if (string[i] == (char)searchedChar)
+		return ((char *)(string + i));
+	return (NULL);
 }
+
+// int	main(void)
+// {
+// 	#include <stdio.h>
+
+// 	printf("Result: %s\n", ft_strchr("Bonjour salut les gars", 'a'));
+// 	return (0);
+// }

@@ -1,32 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lquehec <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/14 12:03:44 by lquehec           #+#    #+#             */
-/*   Updated: 2023/10/14 12:03:44 by lquehec          ###   ########.fr       */
+/*   Created: 2023/10/14 17:43:06 by lquehec           #+#    #+#             */
+/*   Updated: 2023/10/14 17:43:06 by lquehec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+char	*ft_strdup(const char *s1)
 {
-	size_t	i;
+	size_t		i;
+	char		*str;
 
+	str = (char *)malloc(sizeof(*s1) * ft_strlen(s1));
+	if (!str)
+		return (NULL);
 	i = 0;
-	if (size > 0)
+	while (s1[i])
 	{
-		while (src[i] && i < (size - 1))
-		{
-			dest[i] = src[i];
-			i++;
-		}
-		dest[i] = 0;
-	}
-	while (src[i])
+		str[i] = s1[i];
 		i++;
-	return (i);
+	}
+	str[i] = 0;
+	return (str);
 }
+
+// int	main(void)
+// {
+// 	#include <stdio.h>
+// 	#include <string.h>
+
+// 	printf("Original: %s\n", strdup("salut"));
+// 	printf("Result: %s\n", ft_strdup("salut"));
+// 	return (0);
+// }
