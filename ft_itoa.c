@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static size_t	ft_digitlen(int n)
+static size_t	ft_digitlen(long n)
 {
 	size_t	len;
 
@@ -34,27 +34,28 @@ static size_t	ft_digitlen(int n)
 
 char	*ft_itoa(int n)
 {
+	long	nbr;
 	size_t	i;
 	size_t	n_len;
 	char	*str;
 
-	n_len = ft_digitlen(n);
+	nbr = (long)n;
+	n_len = ft_digitlen(nbr);
 	str = (char *)malloc(sizeof(char) * (n_len + 1));
 	if (!str)
 		return (NULL);
 	i = 0;
 	if (n == 0)
 		str[i] = '0';
-	if (n < 0)
+	if (nbr < 0)
 	{
 		str[0] = '-';
-		n *= -1;
+		nbr *= -1;
 	}
-	while (n > 0)
+	while (nbr > 0)
 	{
-		str[(n_len - 1) - i] = (n % 10) + '0';
-		n /= 10;
-		i++;
+		str[(n_len - 1) - i++] = (nbr % 10) + '0';
+		nbr /= 10;
 	}
 	str[n_len] = 0;
 	return (str);
@@ -64,6 +65,6 @@ char	*ft_itoa(int n)
 // {
 // 	#include <stdio.h>
 
-// 	printf("Result: %s\n", ft_itoa(-45945656));
+// 	printf("Result: %s\n", ft_itoa(-2147483648));
 // 	return (0);
 // }

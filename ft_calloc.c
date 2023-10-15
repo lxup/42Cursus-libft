@@ -16,10 +16,12 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	void	*element;
 
+	if ((int)size < 0 || (int)count < 0)
+		return (NULL);
 	element = (void *)malloc(count * size);
 	if (!element)
 		return (NULL);
-	ft_bzero(element, count);
+	ft_bzero(element, (count * size));
 	return (element);
 }
 

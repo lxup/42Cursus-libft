@@ -16,8 +16,6 @@ void	*ft_memset(void *pointer, int value, size_t count)
 {
 	size_t	i;
 
-	if (!pointer)
-		return (NULL);
 	i = 0;
 	while (i < count)
 	{

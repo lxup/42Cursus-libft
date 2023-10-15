@@ -18,14 +18,12 @@ int	ft_atoi(const char *str)
 	int	sign;
 	int	nb;
 
-	if (!str)
-		return (0);
 	i = 0;
 	while (str[i] == ' ' || str[i] == '\f' || str[i] == '\n'
 		|| str[i] == '\r' || str[i] == '\t' || str[i] == '\v')
 		i++;
 	sign = 1;
-	while (str[i] == '-' || str[i] == '+')
+	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
 			sign *= -1;
