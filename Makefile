@@ -37,6 +37,18 @@ SRCS		= $(addsuffix .c, ${SRC})
 
 OBJS		= ${SRCS:.c=.o}
 
+BONUS 		= ft_lstnew.c \
+				ft_lstadd_front.c \
+				ft_lstsize.c \
+				ft_lstlast.c \
+				ft_lstadd_back.c \
+				ft_lstdelone.c \
+				ft_lstclear.c \
+				ft_lstiter.c \
+				ft_lstmap.c \
+
+BONUS_OBJS	= $(BONUS:.c=.o)
+
 CC			= gcc
 RM			= rm -f
 AR			= ar rc
@@ -56,7 +68,7 @@ $(NAME):	${OBJS}
 all:		$(NAME)
 
 clean:
-			${RM} ${OBJS}
+			${RM} ${OBJS} ${BONUS_OBJS}
 
 fclean:		clean
 			${RM} $(NAME)
@@ -64,7 +76,10 @@ fclean:		clean
 re:			fclean all
 
 so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
-	gcc -nostartfiles -shared -o libft.so $(OBJS)
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS) $(BONUS)
+	gcc -nostartfiles -shared -o libft.so $(OBJS) $(BONUS_OBJS)
 
-.PHONY:		all clean fclean re
+bonus:		$(BONUS_OBJS)
+			${AR} $(NAME) $(BONUS_OBJS)
+
+.PHONY:		all clean fclean re bonus
