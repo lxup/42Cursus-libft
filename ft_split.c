@@ -100,4 +100,4 @@ char	**ft_split(char const *s, char c)
 // 	}
 // 	//printf("OUTPUT% %s\n", result[1]);
 // 	return (0);
-// }
+//  }
