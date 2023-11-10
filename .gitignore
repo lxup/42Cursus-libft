@@ -3,3 +3,4 @@ libft.a
 *.o
 *.so
 /libftTester
+/libft-war-machine
