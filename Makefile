@@ -75,10 +75,6 @@ fclean:		clean
 
 re:			fclean all
 
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS) $(BONUS)
-	gcc -nostartfiles -shared -o libft.so $(OBJS) $(BONUS_OBJS)
-
 bonus:		$(BONUS_OBJS)
 			${AR} $(NAME) $(BONUS_OBJS)
 
