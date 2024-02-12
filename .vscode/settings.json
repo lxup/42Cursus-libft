@@ -1,22 +1,10 @@
 {
-    "C_Cpp.errorSquiggles": "disabled",
-    "files.associations": {
-        "*.json.liquid": "json",
-        "*.yaml.liquid": "yaml",
-        "*.md.liquid": "markdown",
-        "*.js.liquid": "liquid-javascript",
-        "*.css.liquid": "liquid-css",
-        "*.scss.liquid": "liquid-scss",
-        "libft.h": "c",
-        "stdio.h": "c"
-    },
-    // The number of spaces a tab is equal to.
-    "editor.tabSize": 4,
-
-    // Insert spaces when pressing Tab.
-    "editor.insertSpaces": true,
-
-    // When opening a file, `editor.tabSize` and `editor.insertSpaces` will be detected based on the file contents.
-    "editor.detectIndentation": true
-    
+	"editor.insertSpaces": false,
+	"files.associations": {
+		"libft_strings.h": "c",
+		"libft_boolean.h": "c",
+		"libft_checker.h": "c",
+		"libft_converter.h": "c",
+		"libft_memory.h": "c"
+	}
 }
