@@ -6,7 +6,7 @@
 /*   By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 20:03:57 by lquehec           #+#    #+#             */
-/*   Updated: 2024/02/12 18:12:57 by lquehec          ###   ########.fr       */
+/*   Updated: 2024/02/12 18:46:00 by lquehec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@
 # include "./libft_list.h"
 # include "./libft_memory.h"
 # include "./libft_strings.h"
+# include "../srcs/gnl/get_next_line.h"
 
 /*
 **	END CUSTOM INCLUDES

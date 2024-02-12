@@ -6,7 +6,7 @@
 /*   By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 16:52:28 by lquehec           #+#    #+#             */
-/*   Updated: 2024/02/12 18:32:09 by lquehec          ###   ########.fr       */
+/*   Updated: 2024/02/12 18:35:30 by lquehec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,12 @@ char	**ft_split(char const *s, char *charset);
 **	./strings/ft_strchr.c
 */
 char	*ft_strchr(const char *string, int searchedChar);
+
+/*
+**	Compare the two strings s1 and s2.
+**	./strings/ft_strcmp.c
+*/
+int		ft_strcmp(const char *s1, const char *s2);
 
 /*
 **	Return a pointer to a new string which is a duplicate of the string s.

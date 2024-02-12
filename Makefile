@@ -6,7 +6,7 @@
 #    By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/12 16:15:19 by lquehec           #+#    #+#              #
-#    Updated: 2024/02/12 18:26:31 by lquehec          ###   ########.fr        #
+#    Updated: 2024/02/12 18:50:24 by lquehec          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,8 @@ VPATH			:=	srcs \
 					srcs/display/str \
 					srcs/list \
 					srcs/memory \
-					srcs/strings
+					srcs/strings \
+					srcs/gnl
 # SRC = ft_atoi \
 # 			ft_bzero \
 # 			ft_calloc \
@@ -143,6 +144,7 @@ SRC_MEMORY		=	ft_bzero \
 
 SRC_STRINGS		=	ft_split \
 					ft_strchr \
+					ft_strcmp \
 					ft_strdup \
 					ft_striteri \
 					ft_strjoin \
@@ -158,12 +160,15 @@ SRC_STRINGS		=	ft_split \
 					ft_tolower \
 					ft_toupper
 
+SRC_GNL			=	get_next_line
+
 SRCS 			=	$(addsuffix .c, $(SRC_CHECKER)) \
 					$(addsuffix .c, $(SRC_CONVERTER)) \
 					$(addsuffix .c, $(SRC_DISPLAY)) \
 					$(addsuffix .c, $(SRC_LIST)) \
 					$(addsuffix .c, $(SRC_MEMORY)) \
-					$(addsuffix .c, $(SRC_STRINGS))
+					$(addsuffix .c, $(SRC_STRINGS)) \
+					$(addsuffix .c, $(SRC_GNL))
 
 OBJS			=	$(SRCS:%.c=$(OBJ_PATH)/%.o)
 
