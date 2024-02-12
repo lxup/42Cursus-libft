@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_find_char.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 20:02:57 by lquehec           #+#    #+#             */
-/*   Updated: 2024/02/12 19:59:00 by lquehec          ###   ########.fr       */
+/*   Created: 2024/02/12 20:06:24 by lquehec           #+#    #+#             */
+/*   Updated: 2024/02/12 20:06:27 by lquehec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *string, int searchedChar)
+ssize_t	ft_find_char(char *str, char c)
 {
-	int	i;
+	ssize_t	index;
 
-	i = 0;
-	while (string[i])
+	if (!str)
+		return (-1);
+	index = 0;
+	while (str[index])
 	{
-		if (string[i] == (char)searchedChar)
-			return ((char *)(string + i));
-		i++;
+		if (str[index] == c)
+			return (index);
+		index++;
 	}
-	if (string[i] == (char)searchedChar)
-		return ((char *)(string + i));
-	return (NULL);
+	return (-1);
 }

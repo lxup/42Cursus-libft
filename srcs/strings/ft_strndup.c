@@ -1,29 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 20:02:57 by lquehec           #+#    #+#             */
-/*   Updated: 2024/02/12 19:59:00 by lquehec          ###   ########.fr       */
+/*   Created: 2024/02/12 20:02:34 by lquehec           #+#    #+#             */
+/*   Updated: 2024/02/12 20:02:51 by lquehec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *string, int searchedChar)
+char	*ft_strndup(const char *str, size_t n, int	free_str)
 {
-	int	i;
+	size_t	index;
+	char	*result;
 
-	i = 0;
-	while (string[i])
+	if (!str)
+		return (NULL);
+	result = ft_calloc(n + 1, sizeof(char));
+	if (result == NULL)
+		return (NULL);
+	index = 0;
+	while (str[index] && index < n)
 	{
-		if (string[i] == (char)searchedChar)
-			return ((char *)(string + i));
-		i++;
+		result[index] = str[index];
+		index++;
 	}
-	if (string[i] == (char)searchedChar)
-		return ((char *)(string + i));
-	return (NULL);
+	while (index <= n)
+	{
+		result[index] = 0;
+		index++;
+	}
+	if (free_str)
+		free((char *)str);
+	return (result);
 }

@@ -6,7 +6,7 @@
 /*   By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 16:52:28 by lquehec           #+#    #+#             */
-/*   Updated: 2024/02/12 18:35:30 by lquehec          ###   ########.fr       */
+/*   Updated: 2024/02/12 20:09:15 by lquehec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,29 @@
 # include "libft.h"
 
 /*
+**	Check if string str contains char c.
+**	./strings/ft_contains_char.c
+**
+**	Return:
+**	(t_bool)TRUE if char was found.
+**	(t_bool)FALSE if char wasn't found.
+*/
+int	ft_contains_char(char *str, char c);
+
+/*
+**	Get the index of char c in string str.
+**	./strings/ft_find_char.c
+**
+**	Return:
+**	index of char found or -1 if char cannot be found.
+*/
+ssize_t	ft_find_char(char *str, char c);
+
+/*
 **	Split string char *str on every char contained in string char *charset.
 **	./strings/ft_split.c
 */
-char	**ft_split(char const *s, char *charset);
+char	**ft_split(char *s, char *charset);
 
 /*
 **	Return the first occurence of searchedChar in string.
@@ -38,6 +57,12 @@ int		ft_strcmp(const char *s1, const char *s2);
 **	./strings/ft_strdup.c
 */
 char	*ft_strdup(const char *s1);
+
+/*
+**	Return a pointer to a new string which is a duplicate of the string s.
+**	./strings/ft_strndup.c
+*/
+char	*ft_strndup(const char *str, size_t n, int	free_str);
 
 /*
 **	Apply the function f to each character of the string passed as argument.

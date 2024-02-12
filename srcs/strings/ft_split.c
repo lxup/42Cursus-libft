@@ -6,79 +6,75 @@
 /*   By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 20:02:52 by lquehec           #+#    #+#             */
-/*   Updated: 2024/02/12 18:25:22 by lquehec          ###   ########.fr       */
+/*   Updated: 2024/02/12 20:08:58 by lquehec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_count_word_len(char const *str, char *charset)
+static int	count_words(char *str, char *charset)
 {
-	int	i;
+	size_t	str_len;
+	int		word_counter;
+	size_t	i;
 
+	str_len = ft_strlen(str);
+	word_counter = 0;
 	i = 0;
-	while (str && str[i] && !ft_strchr(charset, str[i]))
-		i++;
-	return (i);
+	while (i < str_len)
+	{
+		while (i < str_len && ft_contains_char(charset, str[i]))
+			i++;
+		if (i < str_len)
+			word_counter++;
+		else
+			continue ;
+		while (i < str_len && !ft_contains_char(charset, str[i]))
+			i++;
+	}
+	return (word_counter);
 }
 
-static int	ft_count_word(char const *s, char *charset)
+static void	fill_words(char *str, char *charset, char **result)
 {
+	size_t	str_len;
+	int		word_counter;
 	size_t	i;
-	int		count;
+	size_t	temp;
 
+	str_len = ft_strlen(str);
+	word_counter = 0;
 	i = 0;
-	count = 0;
-	while (s && s[i])
+	while (i < str_len)
 	{
-		if (!ft_strchr(charset, s[i]))
+		while (i < str_len && ft_contains_char(charset, str[i]))
+			i++;
+		if (i < str_len)
 		{
-			count++;
-			while (s && ft_strchr(charset, s[i]) && s[i])
-				i++;
+			temp = i;
+			word_counter++;
 		}
 		else
+			continue ;
+		while (i < str_len && !ft_contains_char(charset, str[i]))
 			i++;
+		result[word_counter - 1] = ft_strndup(&str[temp], i - temp, 0);
 	}
-	return (count);
 }
 
-static char	**ft_free(char **strs, int i)
+char	**ft_split(char *s, char *charset)
 {
-	while (i > 0)
-	{
-		free(strs[i]);
-		i--;
-	}
-	free(strs);
-	return (NULL);
-}
+	char	**result;
+	int		word_counter;
 
-char	**ft_split(char const *s, char *charset)
-{
-	int		i;
-	int		word_len;
-	char	**strs;
-
-	strs = (char **)malloc(sizeof(char *) * (ft_count_word(s, charset) + 1));
-	if (!strs || !s)
-		return (ft_free(strs, 0));
-	i = 0;
-	while (*s)
-	{
-		word_len = 0;
-		while (*s && ft_strchr(charset, *s))
-			s++;
-		word_len = ft_count_word_len(s, charset);
-		if (word_len)
-		{
-			strs[i] = ft_substr(s, 0, word_len);
-			if (!strs[i])
-				return (ft_free(strs, i));
-			i++;
-		}
-		s += word_len;
-	}
-	strs[i] = 0;
-	return (strs);
+	if (s == NULL || charset == NULL)
+		return (NULL);
+	result = NULL;
+	word_counter = count_words(s, charset);
+	result = ft_calloc(word_counter + 1, sizeof(char *));
+	if (result == NULL)
+		return (NULL);
+	fill_words(s, charset, result);
+	result[word_counter] = NULL;
+	return (result);
 }
