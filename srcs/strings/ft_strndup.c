@@ -6,13 +6,13 @@
 /*   By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 20:02:34 by lquehec           #+#    #+#             */
-/*   Updated: 2024/02/12 20:02:51 by lquehec          ###   ########.fr       */
+/*   Updated: 2024/02/12 20:14:21 by lquehec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strndup(const char *str, size_t n, int	free_str)
+char	*ft_strndup(const char *str, size_t n, int free_str)
 {
 	size_t	index;
 	char	*result;

@@ -6,7 +6,7 @@
 /*   By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 16:52:28 by lquehec           #+#    #+#             */
-/*   Updated: 2024/02/12 20:09:15 by lquehec          ###   ########.fr       */
+/*   Updated: 2024/02/12 20:14:51 by lquehec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 **	(t_bool)TRUE if char was found.
 **	(t_bool)FALSE if char wasn't found.
 */
-int	ft_contains_char(char *str, char c);
+int		ft_contains_char(char *str, char c);
 
 /*
 **	Get the index of char c in string str.
@@ -62,7 +62,7 @@ char	*ft_strdup(const char *s1);
 **	Return a pointer to a new string which is a duplicate of the string s.
 **	./strings/ft_strndup.c
 */
-char	*ft_strndup(const char *str, size_t n, int	free_str);
+char	*ft_strndup(const char *str, size_t n, int free_str);
 
 /*
 **	Apply the function f to each character of the string passed as argument.
