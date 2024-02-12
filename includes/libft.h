@@ -6,7 +6,7 @@
 /*   By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 20:03:57 by lquehec           #+#    #+#             */
-/*   Updated: 2024/02/12 18:46:00 by lquehec          ###   ########.fr       */
+/*   Updated: 2024/02/12 19:13:39 by lquehec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@
 **	START CUSTOM INCLUDES
 */
 
-# include "./libft_boolean.h"
 # include "./libft_checker.h"
 # include "./libft_converter.h"
 # include "./libft_display.h"

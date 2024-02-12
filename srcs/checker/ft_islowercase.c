@@ -6,13 +6,13 @@
 /*   By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 15:19:45 by lquehec           #+#    #+#             */
-/*   Updated: 2024/02/12 16:30:00 by lquehec          ###   ########.fr       */
+/*   Updated: 2024/02/12 19:14:16 by lquehec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_bool	ft_islowercase(char c)
+int	ft_islowercase(char c)
 {
 	return (c >= 'a' && c <= 'z');
 }

@@ -6,13 +6,13 @@
 /*   By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 20:01:13 by lquehec           #+#    #+#             */
-/*   Updated: 2024/02/12 16:29:40 by lquehec          ###   ########.fr       */
+/*   Updated: 2024/02/12 19:13:47 by lquehec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_bool	ft_isalnum(int c)
+int	ft_isalnum(int c)
 {
 	return (ft_isalpha(c) || ft_isdigit(c));
 }

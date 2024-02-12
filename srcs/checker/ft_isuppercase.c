@@ -6,13 +6,13 @@
 /*   By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 15:18:40 by lquehec           #+#    #+#             */
-/*   Updated: 2024/02/12 16:30:03 by lquehec          ###   ########.fr       */
+/*   Updated: 2024/02/12 19:14:22 by lquehec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_bool	ft_isuppercase(char c)
+int	ft_isuppercase(char c)
 {
 	return (c >= 'A' && c <= 'Z');
 }

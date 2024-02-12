@@ -6,13 +6,13 @@
 /*   By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 20:01:16 by lquehec           #+#    #+#             */
-/*   Updated: 2024/02/12 16:29:54 by lquehec          ###   ########.fr       */
+/*   Updated: 2024/02/12 19:13:52 by lquehec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_bool	ft_isalpha(int c)
+int	ft_isalpha(int c)
 {
 	return (ft_isuppercase(c) || ft_islowercase(c));
 }

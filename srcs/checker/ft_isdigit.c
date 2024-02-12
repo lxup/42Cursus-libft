@@ -6,13 +6,13 @@
 /*   By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 20:01:25 by lquehec           #+#    #+#             */
-/*   Updated: 2024/02/12 16:29:58 by lquehec          ###   ########.fr       */
+/*   Updated: 2024/02/12 19:14:07 by lquehec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_bool	ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
 	return ((c >= '0' && c <= '9'));
 }

@@ -6,13 +6,13 @@
 /*   By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 15:21:34 by lquehec           #+#    #+#             */
-/*   Updated: 2024/02/12 16:29:59 by lquehec          ###   ########.fr       */
+/*   Updated: 2024/02/12 19:14:09 by lquehec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_bool	ft_isdigitstr(char *str)
+int	ft_isdigitstr(char *str)
 {
 	size_t	i;
 

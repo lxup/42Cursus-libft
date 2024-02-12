@@ -6,13 +6,13 @@
 /*   By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 20:01:28 by lquehec           #+#    #+#             */
-/*   Updated: 2024/02/12 16:30:02 by lquehec          ###   ########.fr       */
+/*   Updated: 2024/02/12 19:14:19 by lquehec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_bool	ft_isprint(int c)
+int	ft_isprint(int c)
 {
 	return ((c >= ' ' && c <= '~'));
 }
