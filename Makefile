@@ -6,7 +6,7 @@
 #    By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/12 16:15:19 by lquehec           #+#    #+#              #
-#    Updated: 2024/02/13 02:21:18 by lquehec          ###   ########.fr        #
+#    Updated: 2024/02/13 02:25:39 by lquehec          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,6 +65,7 @@ CFLAGS 			=	-Wall -Wextra -Werror
 # **************************************************************************** #
 
 INCLUDES_PATH	:=	includes
+GNL_INCLUDES_PATH	:=	srcs/gnl
 OBJ_PATH		:=	.obj
 VPATH			:=	srcs \
 					srcs/checker \
@@ -83,6 +84,7 @@ VPATH			:=	srcs \
 # **************************************************************************** #
 
 CFLAGS			+=	-I $(INCLUDES_PATH)
+CFLAGS			+=	-I $(GNL_INCLUDES_PATH)
 
 # **************************************************************************** #
 #                                   SOURCES                                    #
