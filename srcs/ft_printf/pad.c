@@ -6,13 +6,14 @@
 /*   By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 11:47:05 by lquehec           #+#    #+#             */
-/*   Updated: 2024/02/13 12:08:09 by lquehec          ###   ########.fr       */
+/*   Updated: 2024/02/13 12:20:52 by lquehec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	output_padding(t_struct *vars, int width_to_add, int prec_to_add, int fd)
+static int	output_padding(t_struct *vars, int width_to_add, \
+	int prec_to_add, int fd)
 {
 	int	ret;
 
