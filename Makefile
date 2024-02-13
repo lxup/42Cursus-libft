@@ -6,7 +6,7 @@
 #    By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/12 16:15:19 by lquehec           #+#    #+#              #
-#    Updated: 2024/02/13 12:11:09 by lquehec          ###   ########.fr        #
+#    Updated: 2024/02/13 12:27:50 by lquehec          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -191,29 +191,12 @@ SRCS 			=	$(addsuffix .c, $(SRC_CHECKER)) \
 OBJS			=	$(SRCS:%.c=$(OBJ_PATH)/%.o)
 
 # **************************************************************************** #
-#                                     LIBS                                     #
-# **************************************************************************** #
-
-LDLIBS				= -lft
-
-# PRINTF
-# PRINTF_DIR		=	srcs/ft_printf
-# PRINTF_INC_PATH	=	$(PRINTF_DIR)/includes
-# PRINTF			=	$(PRINTF_DIR)/libftprintf.a
-
-# # CFLAGS			+=	-I $(PRINTF_INC_PATH)
-
-# LDLIBS			+=	-L$(PRINTF_DIR)
-
-# **************************************************************************** #
 #                                    RULES                                     #
 # **************************************************************************** #
 
 all:			$(NAME)
 
 $(NAME):		$(OBJ_PATH) $(OBJS)
-				# @make -C $(PRINTF_DIR)
-				# @mv $(PRINTF) $(NAME)
 				@${AR} ${NAME} ${OBJS}
 				@${RN} ${NAME}
 				@printf "\n$(GREEN)> $(NAME) was successfully compiled 🎉$(END)\n"
@@ -226,13 +209,11 @@ $(OBJ_PATH)/%.o: %.c
 				@$(CC) $(CFLAGS) -c $< -o $@
 			
 clean:
-				# @make clean -C $(PRINTF_DIR)
 				@printf "$(YELLOW)> Cleaning libft... 🧹$(END)\n"
 				@${RM} ${OBJ_PATH}
 				@printf "$(YELLOW)> All objects files of $(NAME) have been deleted 🗑️$(END)\n"
 
 fclean:			clean
-				# @make fclean -C $(PRINTF_DIR)
 				@${RM} $(NAME)
 				@printf "$(YELLOW)> $(NAME) has been deleted 🔥$(END)\n"
 
