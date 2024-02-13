@@ -6,8 +6,12 @@
 #    By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/12 16:15:19 by lquehec           #+#    #+#              #
-#    Updated: 2024/02/12 22:49:39 by lquehec          ###   ########.fr        #
+#    Updated: 2024/02/13 02:08:35 by lquehec          ###   ########.fr        #
 #                                                                              #
+# **************************************************************************** #
+
+# **************************************************************************** #
+#                                     VARS                                     #
 # **************************************************************************** #
 
 END				:=	\033[0m
@@ -38,6 +42,28 @@ BLINK			:=	\033[5m
 REVERSE			:=	\033[7m
 
 OS 				:=	$(shell uname)
+
+# **************************************************************************** #
+#                                   PROGRAM                                    #
+# **************************************************************************** #
+
+NAME			=	libft.a
+
+# **************************************************************************** #
+#                                   COMPILER                                   #
+# **************************************************************************** #
+
+CC				=	gcc
+RM				=	rm -rf
+AR				=	ar rc
+RN				=	ranlib
+
+CFLAGS 			=	-Wall -Wextra -Werror
+
+# **************************************************************************** #
+#                                    PATHS                                     #
+# **************************************************************************** #
+
 INCLUDES_PATH	:=	includes
 OBJ_PATH		:=	.obj
 VPATH			:=	srcs \
@@ -51,6 +77,16 @@ VPATH			:=	srcs \
 					srcs/memory \
 					srcs/strings \
 					srcs/gnl
+
+# **************************************************************************** #
+#                                    FLAGS                                     #
+# **************************************************************************** #
+
+CFLAGS			+=	-I $(INCLUDES_PATH)
+
+# **************************************************************************** #
+#                                   SOURCES                                    #
+# **************************************************************************** #
 
 SRC_CHECKER		=	ft_isalnum \
 					ft_isalpha \
@@ -139,20 +175,30 @@ SRCS 			=	$(addsuffix .c, $(SRC_CHECKER)) \
 
 OBJS			=	$(SRCS:%.c=$(OBJ_PATH)/%.o)
 
-CC				=	gcc
-RM				=	rm -rf
-AR				=	ar rc
-RN				=	ranlib
+# **************************************************************************** #
+#                                     LIBS                                     #
+# **************************************************************************** #
 
-CFLAGS 			=	-Wall -Wextra -Werror
-FLAGS			=	-I $(INCLUDES_PATH)
+LDLIBS				= -lft
 
-NAME			=	libft.a
+# PRINTF
+PRINTF_DIR		=	ft_printf
+PRINTF_INC_PATH	=	$(PRINTF_DIR)/includes
+PRINTF			=	$(PRINTF_DIR)/libftprintf.a
+
+CFLAGS			+=	-I $(PRINTF_INC_PATH)
+
+LDLIBS			+=	-L$(PRINTF_DIR)
+
+# **************************************************************************** #
+#                                    RULES                                     #
+# **************************************************************************** #
 
 all:			$(NAME)
 
 $(NAME):		$(OBJ_PATH) $(OBJS)
-				@${AR} ${NAME} ${OBJS}
+				@make -C $(PRINTF_DIR)
+				@${AR} ${NAME} ${OBJS} $(PRINTF)
 				@${RN} ${NAME}
 				@printf "\n$(GREEN)> $(NAME) was successfully compiled 🎉$(END)\n"
 
@@ -161,14 +207,16 @@ $(OBJ_PATH):
 
 $(OBJ_PATH)/%.o: %.c
 				@printf "$(BLUE)> Compiling libft objects... %-33.33s\r" $@
-				@$(CC) $(CFLAGS) $(FLAGS) -c $< -o $@
+				@$(CC) $(CFLAGS) -c $< -o $@
 			
 clean:
+				@make clean -C $(PRINTF_DIR)
 				@printf "$(YELLOW)> Cleaning libft... 🧹$(END)\n"
 				@${RM} ${OBJ_PATH}
 				@printf "$(YELLOW)> All objects files of $(NAME) have been deleted 🗑️$(END)\n"
 
 fclean:			clean
+				@make fclean -C $(PRINTF_DIR)
 				@${RM} $(NAME)
 				@printf "$(YELLOW)> $(NAME) has been deleted 🔥$(END)\n"
 
