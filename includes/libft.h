@@ -6,7 +6,7 @@
 /*   By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 20:03:57 by lquehec           #+#    #+#             */
-/*   Updated: 2024/02/13 03:28:18 by lquehec          ###   ########.fr       */
+/*   Updated: 2024/02/13 12:08:42 by lquehec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,11 @@
 # include "libft_converter.h"
 # include "libft_display.h"
 # include "libft_list.h"
+# include "libft_math.h"
 # include "libft_memory.h"
 # include "libft_strings.h"
-# include "get_next_line.h"
-// # include "ft_printf.h"
+# include "../srcs/gnl/get_next_line_bonus.h"
+# include "../srcs/ft_printf/ft_printf.h"
 
 /*
 **	END CUSTOM INCLUDES

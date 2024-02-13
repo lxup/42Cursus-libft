@@ -6,7 +6,7 @@
 #    By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/12 16:15:19 by lquehec           #+#    #+#              #
-#    Updated: 2024/02/13 03:28:12 by lquehec          ###   ########.fr        #
+#    Updated: 2024/02/13 12:11:09 by lquehec          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,7 +65,6 @@ CFLAGS 			=	-Wall -Wextra -Werror
 # **************************************************************************** #
 
 INCLUDES_PATH		=	includes
-GNL_INCLUDES_PATH	=	srcs/gnl
 OBJ_PATH			=	.obj
 VPATH				=	srcs \
 						srcs/checker \
@@ -75,16 +74,17 @@ VPATH				=	srcs \
 						srcs/display/nbr \
 						srcs/display/str \
 						srcs/list \
+						srcs/math \
 						srcs/memory \
 						srcs/strings \
-						srcs/gnl
+						srcs/gnl \
+						srcs/ft_printf
 
 # **************************************************************************** #
 #                                    FLAGS                                     #
 # **************************************************************************** #
 
 CFLAGS			+=	-I $(INCLUDES_PATH)
-CFLAGS			+=	-I $(GNL_INCLUDES_PATH)
 
 # **************************************************************************** #
 #                                   SOURCES                                    #
@@ -102,6 +102,7 @@ SRC_CHECKER		=	ft_isalnum \
 
 SRC_CONVERTER	=	ft_atoi \
 					ft_itoa \
+					ft_itoa_base \
 					ft_lowercase_char \
 					ft_uppercase_char
 
@@ -136,6 +137,10 @@ SRC_LIST		=	ft_lstadd_back \
 					ft_lstnew \
 					ft_lstsize
 
+SRC_MATH		=	ft_abs \
+					ft_max \
+					ft_min
+
 SRC_MEMORY		=	ft_bzero \
 					ft_calloc \
 					ft_memchr \
@@ -165,15 +170,23 @@ SRC_STRINGS		=	ft_contains_char \
 					ft_tolower \
 					ft_toupper
 
-SRC_GNL			=	get_next_line
+SRC_GNL			=	get_next_line_bonus
+
+SRC_PRINTF		=	ft_printf \
+					ft_dprintf \
+					handler \
+					pad \
+					utils
 
 SRCS 			=	$(addsuffix .c, $(SRC_CHECKER)) \
 					$(addsuffix .c, $(SRC_CONVERTER)) \
 					$(addsuffix .c, $(SRC_DISPLAY)) \
 					$(addsuffix .c, $(SRC_LIST)) \
+					$(addsuffix .c, $(SRC_MATH)) \
 					$(addsuffix .c, $(SRC_MEMORY)) \
 					$(addsuffix .c, $(SRC_STRINGS)) \
-					$(addsuffix .c, $(SRC_GNL))
+					$(addsuffix .c, $(SRC_GNL)) \
+					$(addsuffix .c, $(SRC_PRINTF))
 
 OBJS			=	$(SRCS:%.c=$(OBJ_PATH)/%.o)
 
@@ -184,11 +197,11 @@ OBJS			=	$(SRCS:%.c=$(OBJ_PATH)/%.o)
 LDLIBS				= -lft
 
 # PRINTF
-# PRINTF_DIR		=	ft_printf
+# PRINTF_DIR		=	srcs/ft_printf
 # PRINTF_INC_PATH	=	$(PRINTF_DIR)/includes
 # PRINTF			=	$(PRINTF_DIR)/libftprintf.a
 
-# CFLAGS			+=	-I $(PRINTF_INC_PATH)
+# # CFLAGS			+=	-I $(PRINTF_INC_PATH)
 
 # LDLIBS			+=	-L$(PRINTF_DIR)
 

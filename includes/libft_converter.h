@@ -6,7 +6,7 @@
 /*   By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 17:02:36 by lquehec           #+#    #+#             */
-/*   Updated: 2024/02/12 18:07:37 by lquehec          ###   ########.fr       */
+/*   Updated: 2024/02/13 11:57:56 by lquehec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,12 @@ int		ft_atoi(const char *str);
 **	./converter/ft_itoa.c
 */
 char	*ft_itoa(int n);
+
+/*
+**	Convert int to string with base.
+**	./converter/ft_itoa_base.c
+*/
+char	*ft_itoa_base(unsigned long n, char *base);
 
 /*
 **	Convert lower case to upper case.
