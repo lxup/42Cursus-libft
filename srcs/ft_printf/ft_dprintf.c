@@ -6,7 +6,7 @@
 /*   By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 11:46:05 by lquehec           #+#    #+#             */
-/*   Updated: 2024/02/13 12:10:57 by lquehec          ###   ########.fr       */
+/*   Updated: 2024/02/13 13:11:11 by lquehec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	ft_dprintf(const char *s, ...)
 
 	va_start(vars.ap, s);
 	ret = 0;
+	if (!s)
+		return (-1);
 	while (*s)
 	{
 		if (*s == '%' && ++s)
