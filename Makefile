@@ -6,7 +6,7 @@
 #    By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/12 16:15:19 by lquehec           #+#    #+#              #
-#    Updated: 2024/02/13 12:29:35 by lquehec          ###   ########.fr        #
+#    Updated: 2024/02/13 15:35:16 by lquehec          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -152,6 +152,7 @@ SRC_MEMORY		=	ft_bzero \
 SRC_STRINGS		=	ft_contains_char \
 					ft_find_char \
 					ft_split \
+					ft_split_sep \
 					ft_strchr \
 					ft_strcmp \
 					ft_strdup \

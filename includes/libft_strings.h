@@ -6,7 +6,7 @@
 /*   By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 16:52:28 by lquehec           #+#    #+#             */
-/*   Updated: 2024/02/12 20:14:51 by lquehec          ###   ########.fr       */
+/*   Updated: 2024/02/13 15:34:34 by lquehec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,13 @@ ssize_t	ft_find_char(char *str, char c);
 **	./strings/ft_split.c
 */
 char	**ft_split(char *s, char *charset);
+
+/*
+**	Split string char *str on every char contained in string char *charset and
+**	also on every char contained in string char *sep.
+**	./strings/ft_split_sep.c
+*/
+char	**ft_split_sep(char *s, char *charset, char *sep);
 
 /*
 **	Return the first occurence of searchedChar in string.
