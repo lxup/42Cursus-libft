@@ -6,13 +6,13 @@
 /*   By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 20:02:52 by lquehec           #+#    #+#             */
-/*   Updated: 2024/02/13 15:40:23 by lquehec          ###   ########.fr       */
+/*   Updated: 2024/02/13 16:37:04 by lquehec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count_words(char *str, char *charset, char *sep)
+static int	count_words(char *str, char *charset)
 {
 	size_t	str_len;
 	int		word_counter;
@@ -67,14 +67,15 @@ char	**ft_split_sep(char *s, char *charset, char *sep)
 	char	**result;
 	int		word_counter;
 
+	(void)sep;
 	if (s == NULL || charset == NULL)
 		return (NULL);
 	result = NULL;
-	word_counter = count_words(s, charset, sep);
+	word_counter = count_words(s, charset);
 	result = ft_calloc(word_counter + 1, sizeof(char *));
 	if (result == NULL)
 		return (NULL);
-	fill_words(s, charset, sep, result);
+	fill_words(s, charset, result);
 	result[word_counter] = NULL;
 	return (result);
 }

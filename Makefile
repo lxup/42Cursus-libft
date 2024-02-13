@@ -6,7 +6,7 @@
 #    By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/12 16:15:19 by lquehec           #+#    #+#              #
-#    Updated: 2024/02/13 15:35:16 by lquehec          ###   ########.fr        #
+#    Updated: 2024/02/13 19:12:20 by lquehec          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -156,6 +156,7 @@ SRC_STRINGS		=	ft_contains_char \
 					ft_strchr \
 					ft_strcmp \
 					ft_strdup \
+					ft_strhas \
 					ft_striteri \
 					ft_strjoin \
 					ft_strlcat \

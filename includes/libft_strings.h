@@ -6,7 +6,7 @@
 /*   By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 16:52:28 by lquehec           #+#    #+#             */
-/*   Updated: 2024/02/13 15:34:34 by lquehec          ###   ########.fr       */
+/*   Updated: 2024/02/13 19:12:00 by lquehec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,13 @@ char	*ft_strdup(const char *s1);
 **	./strings/ft_strndup.c
 */
 char	*ft_strndup(const char *str, size_t n, int free_str);
+
+/*
+**	Locate the first occurrence of the null-terminated string little in the
+**	null-terminated string big.
+**	./strings/ft_strnstr.c
+*/
+int		ft_strhas(char *str, char *set);
 
 /*
 **	Apply the function f to each character of the string passed as argument.
