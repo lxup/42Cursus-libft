@@ -6,7 +6,7 @@
 #    By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/12 16:15:19 by lquehec           #+#    #+#              #
-#    Updated: 2024/02/13 02:25:39 by lquehec          ###   ########.fr        #
+#    Updated: 2024/02/13 03:28:12 by lquehec          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,20 +64,20 @@ CFLAGS 			=	-Wall -Wextra -Werror
 #                                    PATHS                                     #
 # **************************************************************************** #
 
-INCLUDES_PATH	:=	includes
-GNL_INCLUDES_PATH	:=	srcs/gnl
-OBJ_PATH		:=	.obj
-VPATH			:=	srcs \
-					srcs/checker \
-					srcs/converter \
-					srcs/display \
-					srcs/display/char \
-					srcs/display/nbr \
-					srcs/display/str \
-					srcs/list \
-					srcs/memory \
-					srcs/strings \
-					srcs/gnl
+INCLUDES_PATH		=	includes
+GNL_INCLUDES_PATH	=	srcs/gnl
+OBJ_PATH			=	.obj
+VPATH				=	srcs \
+						srcs/checker \
+						srcs/converter \
+						srcs/display \
+						srcs/display/char \
+						srcs/display/nbr \
+						srcs/display/str \
+						srcs/list \
+						srcs/memory \
+						srcs/strings \
+						srcs/gnl
 
 # **************************************************************************** #
 #                                    FLAGS                                     #
@@ -184,13 +184,13 @@ OBJS			=	$(SRCS:%.c=$(OBJ_PATH)/%.o)
 LDLIBS				= -lft
 
 # PRINTF
-PRINTF_DIR		=	ft_printf
-PRINTF_INC_PATH	=	$(PRINTF_DIR)/includes
-PRINTF			=	$(PRINTF_DIR)/libftprintf.a
+# PRINTF_DIR		=	ft_printf
+# PRINTF_INC_PATH	=	$(PRINTF_DIR)/includes
+# PRINTF			=	$(PRINTF_DIR)/libftprintf.a
 
-CFLAGS			+=	-I $(PRINTF_INC_PATH)
+# CFLAGS			+=	-I $(PRINTF_INC_PATH)
 
-LDLIBS			+=	-L$(PRINTF_DIR)
+# LDLIBS			+=	-L$(PRINTF_DIR)
 
 # **************************************************************************** #
 #                                    RULES                                     #
@@ -199,8 +199,8 @@ LDLIBS			+=	-L$(PRINTF_DIR)
 all:			$(NAME)
 
 $(NAME):		$(OBJ_PATH) $(OBJS)
-				@make -C $(PRINTF_DIR)
-				@mv $(PRINTF) $(NAME)
+				# @make -C $(PRINTF_DIR)
+				# @mv $(PRINTF) $(NAME)
 				@${AR} ${NAME} ${OBJS}
 				@${RN} ${NAME}
 				@printf "\n$(GREEN)> $(NAME) was successfully compiled 🎉$(END)\n"
@@ -213,13 +213,13 @@ $(OBJ_PATH)/%.o: %.c
 				@$(CC) $(CFLAGS) -c $< -o $@
 			
 clean:
-				@make clean -C $(PRINTF_DIR)
+				# @make clean -C $(PRINTF_DIR)
 				@printf "$(YELLOW)> Cleaning libft... 🧹$(END)\n"
 				@${RM} ${OBJ_PATH}
 				@printf "$(YELLOW)> All objects files of $(NAME) have been deleted 🗑️$(END)\n"
 
 fclean:			clean
-				@make fclean -C $(PRINTF_DIR)
+				# @make fclean -C $(PRINTF_DIR)
 				@${RM} $(NAME)
 				@printf "$(YELLOW)> $(NAME) has been deleted 🔥$(END)\n"
 

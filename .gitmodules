@@ -2,7 +2,3 @@
 	path = srcs/gnl
 	url = git@github.com:lxup/42Cursus-gnl.git
 	branch = enhanced
-[submodule "ft_printf"]
-	path = ft_printf
-	url = https://github.com/lxup/42Cursus-printf.git
-	branch = enhanced
