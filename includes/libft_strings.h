@@ -6,7 +6,7 @@
 /*   By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 16:52:28 by lquehec           #+#    #+#             */
-/*   Updated: 2024/02/13 19:12:00 by lquehec          ###   ########.fr       */
+/*   Updated: 2024/02/13 21:04:57 by lquehec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,6 +140,12 @@ char	*ft_strrchr(const char *string, int searchedChar);
 **	./strings/ft_strjoin.c
 */
 char	*ft_strtrim(char const *s1, char const *set);
+
+/*
+** Check if string str contains only whitespace.
+**	./strings/ft_strwhitespace.c
+*/
+int		ft_strwhitespace(char *str);
 
 /*
 **	Allocate (with malloc(3)) and return a substring from the string ’s’.

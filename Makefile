@@ -6,7 +6,7 @@
 #    By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/12 16:15:19 by lquehec           #+#    #+#              #
-#    Updated: 2024/02/13 19:12:20 by lquehec          ###   ########.fr        #
+#    Updated: 2024/02/13 21:05:14 by lquehec          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -168,6 +168,7 @@ SRC_STRINGS		=	ft_contains_char \
 					ft_strnstr \
 					ft_strrchr \
 					ft_strtrim \
+					ft_strwhitespace \
 					ft_substr \
 					ft_tolower \
 					ft_toupper
