@@ -6,7 +6,7 @@
 #    By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/12 16:15:19 by lquehec           #+#    #+#              #
-#    Updated: 2024/02/13 02:08:35 by lquehec          ###   ########.fr        #
+#    Updated: 2024/02/13 02:21:18 by lquehec          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -198,7 +198,8 @@ all:			$(NAME)
 
 $(NAME):		$(OBJ_PATH) $(OBJS)
 				@make -C $(PRINTF_DIR)
-				@${AR} ${NAME} ${OBJS} $(PRINTF)
+				@mv $(PRINTF) $(NAME)
+				@${AR} ${NAME} ${OBJS}
 				@${RN} ${NAME}
 				@printf "\n$(GREEN)> $(NAME) was successfully compiled 🎉$(END)\n"
 
