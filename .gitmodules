@@ -1,0 +1,4 @@
+[submodule "srcs/gnl"]
+	path = srcs/gnl
+	url = https://github.com/lxup/42Cursus-gnl.git
+	branch = enhanced
