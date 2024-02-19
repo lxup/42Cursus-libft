@@ -6,7 +6,7 @@
 #    By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/12 16:15:19 by lquehec           #+#    #+#              #
-#    Updated: 2024/02/13 21:16:44 by lquehec          ###   ########.fr        #
+#    Updated: 2024/02/19 12:31:13 by lquehec          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -101,6 +101,7 @@ SRC_CHECKER		=	ft_isalnum \
 					ft_iswhitespace
 
 SRC_CONVERTER	=	ft_atoi \
+					ft_atol \
 					ft_itoa \
 					ft_itoa_base \
 					ft_lowercase_char \

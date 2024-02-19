@@ -6,7 +6,7 @@
 /*   By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 17:02:36 by lquehec           #+#    #+#             */
-/*   Updated: 2024/02/13 11:57:56 by lquehec          ###   ########.fr       */
+/*   Updated: 2024/02/19 12:31:33 by lquehec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,12 @@
 **	./converter/ft_atoi.c
 */
 int		ft_atoi(const char *str);
+
+/*
+**	Convert string to long.
+**	./converter/ft_atol.c
+*/
+int		ft_atol(const char *str);
 
 /*
 **	Convert int to string.
