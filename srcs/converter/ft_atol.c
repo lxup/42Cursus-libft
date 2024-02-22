@@ -6,35 +6,29 @@
 /*   By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 20:01:00 by lquehec           #+#    #+#             */
-/*   Updated: 2024/02/19 12:30:17 by lquehec          ###   ########.fr       */
+/*   Updated: 2024/02/22 20:14:49 by lquehec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atol(const char *str)
+long	ft_atol(const char *str)
 {
 	int		i;
-	int		sign;
+	long	sign;
 	long	nb;
 
 	i = 0;
-	nb = 0;
-	sign = 1;
+	nb = 0L;
+	sign = 1L;
 	if (str == NULL)
 		return (nb);
 	while (ft_iswhitespace(str[i]))
 		i++;
 	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-			sign *= -1;
-		i++;
-	}
+		if (str[i++] == '-')
+			sign = -1L;
 	while (ft_isdigit(str[i]))
-	{
-		nb = nb * 10 + str[i] - '0';
-		i++;
-	}
+		nb = nb * 10 + str[i++] - '0';
 	return (nb * sign);
 }
