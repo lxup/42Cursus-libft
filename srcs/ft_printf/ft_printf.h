@@ -6,7 +6,7 @@
 /*   By: lquehec <lquehec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 11:43:44 by lquehec           #+#    #+#             */
-/*   Updated: 2024/02/13 12:10:26 by lquehec          ###   ########.fr       */
+/*   Updated: 2024/03/08 12:32:58 by lquehec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ typedef struct s_struct
 }			t_struct;
 /* FUNCTIONS */
 int			ft_printf(const char *s, ...);
-int			ft_dprintf(const char *s, ...);
+int			ft_dprintf(int fd, const char *s, ...);
 int			get_spec(t_struct *vars);
 void		parse_flags(const char **s, t_struct *vars);
 int			pad(t_struct *vars, int fd);
